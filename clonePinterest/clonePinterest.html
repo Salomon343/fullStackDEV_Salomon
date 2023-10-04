@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Clone</title>
+    <link rel="stylesheet" href="./styles/clonePinterest.css">
+</head>
+<body>
+    <div class="container" id="pinContainer"></div>
+
+    <script>
+        const pinContainer = document.getElementById("pinContainer");
+
+        // Function to fetch and display random images
+        async function getRandomImages() {
+            const numPins = 10; // Number of pins to display
+            for (let i = 0; i < numPins; i++) {
+                const response = await fetch(`https://picsum.photos/300/300/?random=${i}`);
+                const imgUrl = response.url;
+                const pinHTML = `
+                    <div class="pin">
+                        <img src="${imgUrl}" alt="Random Image">
+                        <div class="pin-description">
+                            Pin ${i + 1} Description
+                        </div>
+                    </div>
+                `;
+                pinContainer.innerHTML += pinHTML;
+            }
+        }
+
+        getRandomImages();
+    </script>
+    <script type="text/javascript">
+        (function (d) {
+        var f = d.getElementsByTagName('SCRIPT')[0],
+            p = d.createElement('SCRIPT');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = '//assets.pinterest.com/js/pinit.js';
+        f.parentNode.insertBefore(p, f);
+        })(document);
+    </script>
+    <script>
+        const PinContainer = document.getElementById("pinContainer");
+        const expandedOverlay = document.getElementById("expandedOverlay");
+        const expandedImage = document.getElementById("expandedImage");
+        const saveButton = document.getElementById("saveButton");
+
+        // Function to expand the image
+        function expandImage(imgSrc) {
+            expandedImage.src = imgSrc;
+            expandedOverlay.style.display = "flex";
+        }
+
+        // Function to close the expanded image
+        function closeExpandedImage() {
+            expandedOverlay.style.display = "none";
+        }
+
+        // Function to handle the "Save" button click
+        function handleSaveButtonClick() {
+            // Implement your save logic here
+            alert("Image saved!");
+        }
+
+        // Attach event listeners to pins
+        pinContainer.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target.tagName === "IMG") {
+                expandImage(target.src);
+            }
+        });
+
+        saveButton.addEventListener("click", handleSaveButtonClick);
+    </script>
+</body>
+</html>

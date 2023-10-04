@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pin {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    display: inline-block;
+    width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pin img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pin:hover img {
+    transform: scale(1.05); /* Zoom in effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.pin-description {
+    padding: 10px;
+    text-align: center;
+}
+
+.expand-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    padding: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.pin:hover .expand-icon {
+    display: block;
+}
+
+.pin .pinterest-share-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.pin:hover .pinterest-share-button {
+    opacity: 1;
+}
