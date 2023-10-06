@@ -1,0 +1,50 @@
+/* Desktops styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 240, 11);
+    max-height: 100%;
+    max-width: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.title {
+    color: brown;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Desktop XL */
+@media screen and (max-width: 1024px) {
+    .container {
+        background-color: orange;
+    }
+    .title {
+        color: tomato;
+    }
+}
+
+/* Desktop L */
+@media screen and (max-width: 768px) {
+    .container {
+        background-color: blue;
+    }
+    .title {
+        color: red;
+    }
+}
+
+/* Mobile L */
+@media screen and (max-width: 320px) {
+    .container {
+        background-color: black;
+    }
+    .title {
+        color: whitesmoke;
+    }
+}
