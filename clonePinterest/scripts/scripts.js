@@ -51,11 +51,11 @@ window.addEventListener("scroll", () => {
     const containerHeight = cardContainer.clientHeight;
     const contentHeight = cardContainer.scrollHeight;
     
-    if (scrollTop + containerHeight >= contentHeight-10) {
+    if (scrollTop + containerHeight >= contentHeight-100) {
       addNewCards('card_small');
-  } else if (scrollTop + containerHeight >= contentHeight-50) {
+  } else if (scrollTop + containerHeight >= contentHeight-500) {
       addNewCards('card_medium');
-  } else if (scrollTop + containerHeight >= contentHeight-100) {
+  } else if (scrollTop + containerHeight >= contentHeight-1000) {
       addNewCards('card_large');
   }
 });
