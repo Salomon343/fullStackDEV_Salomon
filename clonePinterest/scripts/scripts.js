@@ -2,7 +2,7 @@ const cardContainer = document.getElementById("cardContainer");
 const numToAddOnScroll = 10;
 let loadedCards = 0;
 
-function getRandomImageUrl(size) {
+function getRandomImageUrl() {
   const width = Math.floor(Math.random() * (800 - 300 + 1)) + 300;
   const height = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
   return `https://picsum.photos/${width}/${height}/?random=${Math.random()}`;
@@ -11,7 +11,7 @@ function getRandomImageUrl(size) {
  function addNewCards(size) {
     for (let i = 0; i < numToAddOnScroll; i++) {
         loadedCards++;
-        const imageUrl = getRandomImageUrl(size);
+        const imageUrl = getRandomImageUrl();
         const cardStructure = `
             <div class="card ${size}">
             <div class="pin_modal">
@@ -51,11 +51,11 @@ window.addEventListener("scroll", () => {
     const containerHeight = cardContainer.clientHeight;
     const contentHeight = cardContainer.scrollHeight;
     
-    if (scrollTop + containerHeight >= contentHeight-10) {
+    if (scrollTop + containerHeight >= contentHeight-100) {
       addNewCards('card_small');
-  } else if (scrollTop + containerHeight >= contentHeight-50) {
+  } else if (scrollTop + containerHeight >= contentHeight-200) {
       addNewCards('card_medium');
-  } else if (scrollTop + containerHeight >= contentHeight-100) {
+  } else if (scrollTop + containerHeight >= contentHeight-300) {
       addNewCards('card_large');
   }
 });
