@@ -8,11 +8,18 @@
 }
 
 .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
   max-width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   padding: 15px;
   font-weight: bold;
+  z-index: 1000;
+  background-color: whitesmoke;
 }
 
 .menu .logo {
@@ -277,6 +284,7 @@ body {
     grid-template-columns: repeat(auto-fill, 250px);
     grid-auto-rows: auto;
     justify-content: center;
+    margin-top: 60px;
 }
 
 .pin_title {
@@ -292,7 +300,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 1000;
   background-color: rgb(0, 0, 0, 0.1);
   opacity: 0;
   transition-duration: 0.3s;
@@ -383,15 +391,15 @@ body {
   max-height: 100%;
 }
 
-.card_arrange_small {
+.card_small {
   grid-row-end: span var(--row_increment_small);
 }
 
-.card_medium_medium {
+.card_medium {
   grid-row-end: span var(--row_increment_medium);
 }
 
-.card_large_large {
+.card_large {
   grid-row-end: span var(--row_increment_large);
 }
 
